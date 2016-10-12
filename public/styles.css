@@ -1,3 +1,24 @@
 body{
-  background-color: lightblue;
+  text-align: center;
 }
+
+.editForm{
+  margin-left: 340px;
+  text-align: center;
+  font-size: 25px;
+  align-items: center;
+  width: 300px;
+  border: 2px solid gray;
+  color: deepskyblue;
+  height: 370px;
+  }
+
+h1{
+  font-size: 50px;
+  color: deepskyblue;
+  }
+  .products{
+  border: 2px solid gray;
+  }
+
+

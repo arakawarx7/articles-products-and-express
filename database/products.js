@@ -21,8 +21,10 @@ function dataInput(){
 }
 
 function editProduct(reqBody,id){
+  console.log("insideFUcntionreqBody",reqBody);
+  console.log("insidfucntionid",id);
   dataArray = dataArray.map((data)=>{
-    if(data.id === id){
+    if(data.id === parseInt(id)){
       console.log('data###',data);
       return {
         id: id,
@@ -30,6 +32,8 @@ function editProduct(reqBody,id){
         price: parseFloat(reqBody.price),
         inventory: parseFloat(reqBody.inventory)
       };
+      console.log("test",test);
+
     }
     return data;
   });
@@ -43,6 +47,16 @@ function deleteProduct(id){
   });
 }
 
+function getOneProduct(data){
+  return dataArray.find((element)=>{
+    if(element.id === parseFloat(data)){
+      return element;
+    }
+  });
+}
+
+
+
 module.exports = {
-  add, dataInput, editProduct, deleteProduct
+  add, dataInput, editProduct, deleteProduct,getOneProduct
 };

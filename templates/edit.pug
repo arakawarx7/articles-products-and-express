@@ -1,0 +1,18 @@
+extends ./layout.pug
+include ./mixin.pug
+block title
+  title Edit
+
+block body
+  h1 Edit Products
+  form(action='#' method='post').editForm
+    p Name
+    p #{edit}
+    input(name="name" placeholder= product.name).editName
+    p Price
+    input(name="price" placeholder=product.price).editPrice
+    p Inventory
+    input(name="inventory" placeholder= product.inventory).editInventory
+    button.button POST
+    button
+      a(href="/products") HOME

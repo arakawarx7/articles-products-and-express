@@ -10,6 +10,7 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static('./public'));
 app.use('/products',products);
+app.use('/articles',articles);
 
 //set template engine to use Pug
 app.set('view engine','pug');

@@ -1,24 +1,33 @@
 const express = require('express');
-const articles = express.Router();
+const articlesRouter = express.Router();
+const productModel = require('../database/articles');
 
-articles.route('/')
+
+
+articlesRouter.route('/')
   .get((req,res)=>{
-    res.send('get a book');
-  })
+    console.log("TEST GET");
+   res.json(productModel.dataInput());
 
+  });
+
+articlesRouter.route('/')
   .post((req,res)=>{
-    console.log(req.body);
-    res.send(' post a book');
-    console.log('retrieved a book - harry boy');
-  })
+    productModel.add(req.body);
+    res.send(' success posted');
+  });
 
+articlesRouter.route('/:title')
   .put((req,res)=>{
+    productModel.editProduct(req.body,req.params.title);
     res.send(' put a book');
-  })
+  });
 
+articlesRouter.route('/:title')
   .delete((req,res)=>{
+    productModel.deleteData(req.params.title);
     res.send('delete a book');
-  })
+  });
 
 
-  module.exports = articles;
+  module.exports = articlesRouter;
