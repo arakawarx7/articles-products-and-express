@@ -1,7 +1,20 @@
-mixin productList(products)
 
+mixin productList(products)
   each product in products
-    li#product #{product.name}
-    li#product #{product.price}
-    li#product #{product.inventory}
+    div.articleBorder
+      li#product #{product.name}
+      li#product #{product.price}
+      li#product #{product.inventory}
     br
+    //- button
+    //-   a(href="/products/new") Add a product
+
+mixin articleList(products)
+  each articles in products
+    div.articleBorder
+      li#product #{articles.title}
+      li#product #{articles.body}
+      li#product #{articles.author}
+    br
+    //- button
+    //-   a(href="/articles/new") Add an Article

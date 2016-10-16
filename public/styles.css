@@ -1,7 +1,6 @@
-body{
-  text-align: center;
+h1{
+  margin-left: 330px;
 }
-
 .editForm{
   margin-left: 340px;
   text-align: center;
@@ -11,6 +10,7 @@ body{
   border: 2px solid gray;
   color: deepskyblue;
   height: 370px;
+  list-style: none;
   }
 
 h1{
@@ -18,7 +18,19 @@ h1{
   color: deepskyblue;
   }
   .products{
-  border: 2px solid gray;
+/*  border: 2px solid gray;*/
+  margin-left: 260px;
+  text-align: left;
+  font-size: 25px;
+  align-items: center;
+  width: 300px;
+  list-style: none;
+  /*border: 2px solid gray;*/
+
+  }
+
+  .articleBorder{
+    border: 1px solid black;
   }
 
 

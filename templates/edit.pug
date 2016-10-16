@@ -2,17 +2,36 @@ extends ./layout.pug
 include ./mixin.pug
 block title
   title Edit
-
 block body
-  h1 Edit Products
-  form(action='#' method='post').editForm
-    p Name
-    p #{edit}
-    input(name="name" placeholder= product.name).editName
-    p Price
-    input(name="price" placeholder=product.price).editPrice
-    p Inventory
-    input(name="inventory" placeholder= product.inventory).editInventory
-    button.button POST
-    button
-      a(href="/products") HOME
+
+  if page == 'home'
+    h1 Edit Products
+    form(action='#' method='post').editForm
+      p Name
+      p #{edit}
+      input(name="name" placeholder= product.name).editName
+      p Price
+      input(name="price" placeholder=product.price).editPrice
+      p Inventory
+      input(name="inventory" placeholder= product.inventory).editInventory
+      br
+      button.button POST
+      button
+        a(href="/products") HOME
+
+  else
+    h1 Edit Articles
+    form(action='#' method='post').editForm
+      p Title
+      p #{edit}
+      input(name="title" placeholder=article.title).editName
+      p Body
+      input(name="body" placeholder=article.body).editPrice
+      p Author
+      input(name="author" placeholder=article.author).editInventory
+      br
+      button.button POST
+      button
+        a(href="/products") HOME
+
+

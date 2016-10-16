@@ -7,6 +7,7 @@ router.route('/')
 .get((req,res)=>{
   var result = productModel.dataInput();
   res.render("index",{
+    page:'home',
     result});
   //res.render("index",{});
 });
@@ -38,7 +39,8 @@ router.route('/:id/edit')
   var results = productModel.dataInput(req.params.id);
   var product = productModel.getOneProduct(req.params.id);
   res.render('edit',{
-    product,results
+    product,results,
+    page: 'home'
     });
 });
 
@@ -50,7 +52,9 @@ router.route('/:id/edit')
 
 router.route('/new')
 .get((req,res)=>{
-  res.render('new');
+  res.render('new',{
+    page: 'home'
+  });
 })
 
 

@@ -1,4 +1,4 @@
-
+const db = require ('../connection');
 
 var id = 1;
 var dataArray=[];
@@ -11,6 +11,8 @@ function add(body){
     price: parseInt(body.price),
     inventory: parseInt(body.inventory)
   };
+
+  db.query('INSERT INTO ')
   dataArray.push(data);
   id = id + 1;
 }
